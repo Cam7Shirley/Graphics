@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cshirley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 08:56:50 by cshirley          #+#    #+#             */
-/*   Updated: 2018/07/10 12:54:13 by cshirley         ###   ########.fr       */
+/*   Created: 2018/07/10 13:42:42 by cshirley          #+#    #+#             */
+/*   Updated: 2018/07/10 14:04:41 by cshirley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int		main(void)
+void	*ft_realloc(void *ptr)
 {
-	int		rl = 1000;
-	int		cl = 1000;
-	int		row = 0;
-	int		col = 0;
-	void	*mlx = mlx_init();
-	void	*win = mlx_new_window(mlx, rl, cl, "Deez_Nuts");
+	void	*tmp;
+	size_t	size;
 
-	while (row < rl)
+	size = 2 * sizeof(void*);
+	if (ptr == NULL)
 	{
-		make_hor_line(mlx, win, row, rl);
-		row += 50;
+		tmp = malloc(size);
+		return (tmp);
 	}
-	while (col < cl)
-	{
-		make_vert_line(mlx, win, col, cl);
-		col += 50;
-	}
-	mlx_loop(mlx);
-	return (0);
+	size = 2 * sizeof(ptr);
+	free(&ptr);
+	ptr = malloc(size);
+	return (ptr);
 }

@@ -6,12 +6,12 @@
 #    By: cshirley <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/04 09:12:53 by cshirley          #+#    #+#              #
-#    Updated: 2018/07/09 09:58:27 by cshirley         ###   ########.fr        #
+#    Updated: 2018/07/10 13:59:35 by cshirley         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = myfdf
-SRC = grid.c main.c
+SRC = vector.c grid.c main.c
 FLAGS = -Wall -Wextra -Werror
 
 
